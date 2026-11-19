@@ -2,5 +2,33 @@
   {"park": "P01", "kind": "capacity", "effective_at": "2026-04-01T00:00:00", "value": 100},
   {"park": "P01", "kind": "reservation", "effective_at": "2026-04-02T08:00:00", "reservation_id": "R-1", "value": 30},
   {"park": "P01", "kind": "outage", "effective_at": "2026-04-02T10:00:00", "value": 20},
-  {"park": "P01", "kind": "outage_recovery", "effective_at": "2026-04-02T12:00:00", "value": 20}
+  {"park": "P01", "kind": "outage_recovery", "effective_at": "2026-04-02T12:00:00", "value": 20},
+
+  {"id": "E-OUT-1", "park": "P01", "kind": "outage", "effective_at": "2026-04-03T09:00:00", "value": 15, "note": "计划维护"},
+  {"id": "E-REC-1", "park": "P01", "kind": "outage_recovery", "effective_at": "2026-04-05T11:00:00", "recorded_at": "2026-04-08T09:00:00", "value": 15, "note": "恢复，迟到 3 天上报"},
+
+  {"id": "E-R1-REL", "park": "P01", "kind": "reservation", "effective_at": "2026-04-06T18:00:00", "reservation_id": "R-1", "status": "released", "value": 30, "note": "项目甲提前释放"},
+
+  {"id": "E-OUT-2", "park": "P01", "kind": "outage", "effective_at": "2026-04-10T10:00:00", "value": 8, "note": "误报停机"},
+  {"id": "E-REV-2", "kind": "revoke", "target": "E-OUT-2", "effective_at": "2026-04-12T09:00:00", "recorded_at": "2026-04-12T09:00:00", "note": "撤销误报"},
+
+  {"id": "E-OUT-3", "park": "P01", "kind": "outage", "effective_at": "2026-04-15T10:00:00", "value": 3},
+  {"id": "E-COR-3", "kind": "correct", "target": "E-OUT-3", "effective_at": "2026-04-15T10:00:00", "recorded_at": "2026-04-16T08:00:00", "value": 6, "note": "更正停机数量为 6"},
+
+  {"park": "P02", "resource": "gpu", "kind": "capacity", "effective_at": "2026-04-01T00:00:00", "value": 50, "source": "台账系统"},
+  {"park": "P02", "resource": "gpu", "kind": "capacity", "effective_at": "2026-04-10T00:00:00", "value": 70, "source": "台账系统", "note": "扩容上线"},
+  {"park": "P02", "resource": "cpu", "kind": "capacity", "effective_at": "2026-04-01T00:00:00", "value": 200, "source": "台账系统"},
+  {"park": "P02", "resource": "cpu", "kind": "reservation", "effective_at": "2026-04-02T09:00:00", "reservation_id": "R-4", "status": "approved", "value": 80},
+
+  {"park": "P02", "resource": "gpu", "kind": "reservation", "effective_at": "2026-04-03T09:00:00", "reservation_id": "R-2", "status": "approved", "value": 25},
+  {"park": "P02", "resource": "gpu", "kind": "reservation", "effective_at": "2026-04-07T10:00:00", "recorded_at": "2026-04-09T09:00:00", "reservation_id": "R-2", "status": "cancelled", "value": 25, "note": "预留撤销，迟到 2 天上报"},
+  {"park": "P02", "resource": "gpu", "kind": "reservation", "effective_at": "2026-04-04T09:00:00", "reservation_id": "R-3", "status": "approved", "value": 30},
+
+  {"id": "E-OUT-4", "park": "P02", "resource": "gpu", "kind": "outage", "effective_at": "2026-04-04T10:00:00", "value": 10},
+  {"id": "E-REC-4", "park": "P02", "resource": "gpu", "kind": "outage_recovery", "effective_at": "2026-04-06T09:00:00", "value": 10},
+  {"id": "E-REC-5", "park": "P02", "resource": "gpu", "kind": "outage_recovery", "effective_at": "2026-04-06T09:30:00", "value": 10, "note": "重复上报的恢复"},
+
+  {"park": "P03", "resource": "gpu", "kind": "capacity", "effective_at": "2026-04-01T00:00:00", "value": 60, "source": "台账系统"},
+  {"park": "P03", "resource": "gpu", "kind": "capacity", "effective_at": "2026-04-01T00:00:00", "value": 80, "source": "财务导入"},
+  {"park": "P03", "resource": "gpu", "kind": "reservation", "effective_at": "2026-04-02T09:00:00", "reservation_id": "R-5", "status": "approved", "value": 10}
 ]
